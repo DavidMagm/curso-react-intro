@@ -1,13 +1,15 @@
 import { TodoCounter } from './todoCounter';
 import { TodoSearch } from './todoSearch';
 import { TodoList } from './todoList';
+import { TodoItem } from './todoItems';
+import { TodoButtom } from './todoButtom';
+import React from 'react';
 import './App.css';
 
 function App() {
   return (
   
-
-    <div className="App">
+    <React.Fragment>
       <TodoCounter/>
       <TodoSearch />
 
@@ -16,18 +18,12 @@ function App() {
         <TodoItem/>
         <TodoItem/>
       </TodoList>
-    </div>
+      <TodoButtom/>
+    </React.Fragment>
+
   );
 }
 
- function TodoItem () {
-   return (
-      <li>
-     <span>v</span>
-     <p>el texto</p>
-     <span>x</span>
-     </li>
-   );
- }
+
 
 export default App;
