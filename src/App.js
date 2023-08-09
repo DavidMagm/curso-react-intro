@@ -4,6 +4,10 @@ import { TodoList } from './todoList';
 import { TodoItem } from './todoItems';
 import { TodoButtom } from './todoButtom';
 import React from 'react';
+import './todoCounter.css';
+import './todoSearch.css';
+import './todoList.css';
+import './todoItems.css';
 import './App.css';
 
 const depTodo = [
@@ -16,7 +20,7 @@ const depTodo = [
 function App() {
   return (
   
-    <React.Fragment>
+    <>
       <TodoCounter/>
       <TodoSearch />
 
@@ -28,7 +32,7 @@ function App() {
         ))}
       </TodoList>
       <TodoButtom/>
-    </React.Fragment>
+    </>
 
   );
 }

@@ -1,0 +1,10 @@
+li {
+    display: flex;
+    margin: 10px;
+    list-style: none;
+    justify-content: space-around;
+}
+
+li p {
+    margin: 0 8px;
+}
