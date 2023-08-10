@@ -1,6 +1,9 @@
 function TodoButtom () {
     return (
-       <button>Search</button>
+       <button className="todoButton" onClick={(event) => {
+        console.log('click al button');
+        console.log(event);
+       }}>+</button>
     );
   }
 

@@ -1,8 +1,9 @@
-function TodoCounter () {
+
+function TodoCounter ({completed,total}) {
     return (
-       <h1>
-        Titulo
-       </h1>
+       <h2 className="todoCounter">
+        Completed <span>{completed}</span> to <span>{total}</span>
+       </h2>
     );
   }
 

@@ -1,10 +1,46 @@
-li {
+.todoItem {
     display: flex;
-    margin: 10px;
+    margin: 5px;
+    height: 32px;
     list-style: none;
-    justify-content: space-around;
+    justify-content: flex-start;
+    background-color: #eee;
+    border-radius: 12px;
+}
+.itemText {
+    width: 80%;
+    margin: 0;
+    font-size: 18px;
 }
 
-li p {
-    margin: 0 8px;
+.icon {
+    cursor: pointer;
+    font-size: 30px;
+    padding-bottom: 12px;
+}
+.iconCheck {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    margin-right: 14px;
+}
+.iconCheckActive {
+    color: #fff;
+}
+.iconCheck:hover {
+    color: green;
+}
+.iconDelete {
+    margin-left: 28px;
+    position: relative;
+    left: 15px;
+    bottom: 24px;
+}
+.iconDelete:hover {
+    color: red;
+}
+
+.active {
+    background-color: #1F991B;
 }

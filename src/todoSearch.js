@@ -1,6 +1,10 @@
-function TodoSearch () {
+
+function TodoSearch ({searchValue,setSearchValue}) {
     return (
-       <input placeholder="filtrar"></input>
+       <input placeholder="Filter" className="todoSearch" value={searchValue}
+       onChange ={(event) => {
+         setSearchValue(event.target.value);
+       }}></input>
     );
   }
 

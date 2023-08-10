@@ -1,6 +1,10 @@
-ul {
+.TodoList {
     display: flex;
+    width: 50%;
+    height: 40%;
+    margin: 24px auto;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+    /* border: 1px solid #E7E6E0; */
 }

@@ -1,9 +1,10 @@
+
 function TodoItem (props) {
     return (
-       <li>
-      <span>v</span>
-      <p>{props.text}</p>
-      <span>x</span>
+       <li className={`todoItem ${props.completed && "active"}`}>
+      <span className={`icon iconCheck ${props.completed && "iconCheckActive"}`}>v</span>
+      <p className={`itemText`}>{props.text}</p>
+      <span className="icon iconDelete">x</span>
       </li>
     );
   }
