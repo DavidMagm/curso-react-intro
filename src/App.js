@@ -24,6 +24,7 @@ const depTodo = [
 function App() {
   const [todos,setTodo] = React.useState(depTodo);
   const [searchValue,setSearchValue] = React.useState('');
+  
   // filtro de busqueda
   const searchTodo = todos.filter(todo => {
     let todoText = todo.text.toLowerCase();
@@ -37,31 +38,32 @@ function App() {
   
   const completeTodo = (text) => {
     const newTodo = [...todos];
-    const todoIndex = newTodo.findIndex(todo => {
-      todo.text === text
-    })
+    const todoIndex = newTodo.findIndex(
+      (todo) => todo.text === text);
     newTodo[todoIndex].completed = true;
     setTodo(newTodo)
   }
 
   const deleteTodo = (text) => {
     const newTodo = [...todos];
-    const todoIndex = newTodo.findIndex(todo => {
-      todo.text === text
-    })
+    const todoIndex = newTodo.findIndex(
+      (todo) => todo.text === text);
     newTodo.splice(todoIndex,1);
     setTodo(newTodo)
   }
 
   const changeTitle = () => {
-    if(completedTodo == totalTodo) return "You has Finaly";
+    if(completedTodo === totalTodo) {
+      return (<h2>you</h2>)
+    }
   }
 
   return (
   
     <>
       <TodoTitle/>
-      <TodoCounter completed={completedTodo} total={totalTodo} titleChange={changeTitle}/>
+      <TodoCounter completed={completedTodo} total={totalTodo} 
+      titleChange={changeTitle}/>
       <TodoSearch 
       searchValue={searchValue}
       setSearchValue={setSearchValue}
