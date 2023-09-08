@@ -18,6 +18,10 @@
     font-size: 30px;
     padding-bottom: 12px;
 }
+.icon-svg {
+    width: 24px;
+    height: 24px;
+}
 .iconCheck {
     display: flex;
     justify-content: center;
@@ -28,8 +32,8 @@
 .iconCheckActive {
     color: #fff;
 }
-.iconCheck:hover {
-    color: green;
+.iconCheck:hover .icon-svg{
+    fill: green;
 }
 .iconDelete {
     margin-left: 28px;
@@ -37,8 +41,8 @@
     left: 15px;
     bottom: 24px;
 }
-.iconDelete:hover {
-    color: red;
+.iconDelete:hover .icon-svg{
+    fill: red;
 }
 
 .active {
