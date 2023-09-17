@@ -22,26 +22,26 @@
     width: 24px;
     height: 24px;
 }
-.iconCheck {
+.icon-Check {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 5%;
     margin-right: 14px;
 }
-.iconCheckActive {
+.icon-CheckActive {
     color: #fff;
 }
-.iconCheck:hover .icon-svg{
+.icon-Check:hover .icon-svg{
     fill: green;
 }
-.iconDelete {
+.icon-Delete {
     margin-left: 28px;
     position: relative;
     left: 15px;
     bottom: 24px;
 }
-.iconDelete:hover .icon-svg{
+.icon-Delete:hover .icon-svg{
     fill: red;
 }
 

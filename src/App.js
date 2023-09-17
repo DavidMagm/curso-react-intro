@@ -13,16 +13,21 @@ import './todoButton.css';
 import './todoTitle.css';
 import './App.css';
 
-const depTodo = [
-  {text: 'cortar cebolla', completed: true},
-  {text: 'soy yo', completed: false},
-  {text: 'estoy aqui', completed: false},
-  {text: 'ahora vuelvo', completed: false},
-  {text: 'hola mundo', completed: true}
-];
+// const depTodo = [
+//   {text: 'cortar cebolla', completed: true},
+//   {text: 'soy yo', completed: false},
+//   {text: 'estoy aqui', completed: false},
+//   {text: 'ahora vuelvo', completed: false},
+//   {text: 'hola mundo', completed: true}
+// ];
 
 function App() {
-  const [todos,setTodo] = React.useState(depTodo);
+  
+  const [todos,setTodo] = React.useState(() => {
+  const localTodo = localStorage.getItem('TODO_V1');
+    if(localTodo) return JSON.parse(localTodo)
+    return []
+  });
   const [searchValue,setSearchValue] = React.useState('');
   
   // filtro de busqueda
@@ -36,12 +41,17 @@ function App() {
   const completedTodo = todos.filter(todo => !!todo.completed).length;
   const totalTodo = todos.length;
   
+  function saveTodo(newTodo) {
+    localStorage.setItem('TODO_V1', JSON.stringify(newTodo))
+    setTodo(newTodo)
+  }
+
   const completeTodo = (text) => {
     const newTodo = [...todos];
     const todoIndex = newTodo.findIndex(
       (todo) => todo.text === text);
     newTodo[todoIndex].completed = true;
-    setTodo(newTodo)
+    saveTodo(newTodo)
   }
 
   const deleteTodo = (text) => {
@@ -49,21 +59,16 @@ function App() {
     const todoIndex = newTodo.findIndex(
       (todo) => todo.text === text);
     newTodo.splice(todoIndex,1);
-    setTodo(newTodo)
+    saveTodo(newTodo)
   }
 
-  const changeTitle = () => {
-    if(completedTodo === totalTodo) {
-      return (<h2>you</h2>)
-    }
-  }
+
 
   return (
   
     <>
       <TodoTitle/>
-      <TodoCounter completed={completedTodo} total={totalTodo} 
-      titleChange={changeTitle}/>
+      <TodoCounter completed={completedTodo} total={totalTodo} />
       <TodoSearch 
       searchValue={searchValue}
       setSearchValue={setSearchValue}

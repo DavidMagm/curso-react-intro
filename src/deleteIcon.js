@@ -1,3 +1,4 @@
+import React from 'react';
 import {TodoIcon} from './todoIcon';
 
 function DeleteIcon ({onDelete}) {
@@ -10,4 +11,4 @@ function DeleteIcon ({onDelete}) {
     )
 }
 
-export {DeleteIcon}
+export { DeleteIcon }
