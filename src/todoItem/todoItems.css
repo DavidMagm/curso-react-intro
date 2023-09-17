@@ -1,0 +1,50 @@
+.todoItem {
+    display: flex;
+    margin: 5px;
+    height: 32px;
+    list-style: none;
+    justify-content: flex-start;
+    background-color: #eee;
+    border-radius: 12px;
+}
+.itemText {
+    width: 80%;
+    margin: 0;
+    font-size: 18px;
+}
+
+.icon {
+    cursor: pointer;
+    font-size: 30px;
+    padding-bottom: 12px;
+}
+.icon-svg {
+    width: 24px;
+    height: 24px;
+}
+.icon-Check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    margin-right: 14px;
+}
+.icon-CheckActive {
+    color: #fff;
+}
+.icon-Check:hover .icon-svg{
+    fill: green;
+}
+.icon-Delete {
+    margin-left: 28px;
+    position: relative;
+    left: 15px;
+    bottom: 24px;
+}
+.icon-Delete:hover .icon-svg{
+    fill: red;
+}
+
+.active {
+    background-color: #1F991B;
+}

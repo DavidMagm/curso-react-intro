@@ -1,0 +1,15 @@
+.todoSearch {
+    display: block;
+    height: 28px;
+    margin: 10px auto;
+    width: 30%;
+    border-radius: 8px;
+}
+.todoSearch::placeholder {
+    color: #A5A5A5;
+    font-size: 16px;
+    margin-left: 32px;
+}
+.todoSearch:focus {
+    outline-color: #61DAFA;
+}
