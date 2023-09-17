@@ -5,12 +5,6 @@ import { TodoItem } from './todoItems';
 import { TodoButtom } from './todoButtom';
 import { TodoTitle } from './todoTitle';
 import React from 'react';
-import './todoList.css';
-import './todoItems.css';
-import './todoSearch.css';
-import './todoCounter.css';
-import './todoButton.css';
-import './todoTitle.css';
 import './App.css';
 
 // const depTodo = [
@@ -21,13 +15,24 @@ import './App.css';
 //   {text: 'hola mundo', completed: true}
 // ];
 
+function useLocalStorage(itemName,inicialValue) {
+  const localItem = localStorage.getItem(itemName);
+  let parsedItem;
+    localItem ? localStorage.setItem(itemName,JSON.stringify(inicialValue));
+    parsedItem = inicialValue : parsedItem.JSON.parse(localItem);
+
+  const [item, setItem] = React.useState(parsedItem);
+
+  function saveItem(newItem) {
+    localStorage.setItem(itemName, JSON.stringify(newItem))
+    setItem(newItem)
+  }
+  return [item,saveItem];
+}
+
 function App() {
   
-  const [todos,setTodo] = React.useState(() => {
-  const localTodo = localStorage.getItem('TODO_V1');
-    if(localTodo) return JSON.parse(localTodo)
-    return []
-  });
+  const [todos,saveTodo] = useLocalStorage('TODO_V1', []);
   const [searchValue,setSearchValue] = React.useState('');
   
   // filtro de busqueda
@@ -41,10 +46,7 @@ function App() {
   const completedTodo = todos.filter(todo => !!todo.completed).length;
   const totalTodo = todos.length;
   
-  function saveTodo(newTodo) {
-    localStorage.setItem('TODO_V1', JSON.stringify(newTodo))
-    setTodo(newTodo)
-  }
+  
 
   const completeTodo = (text) => {
     const newTodo = [...todos];
