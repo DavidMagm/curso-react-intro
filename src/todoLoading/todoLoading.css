@@ -3,6 +3,7 @@
     height: 30px;
     position: relative;
     z-index: 4;
+    background-color: transparent;
   }
   
   .typing-circle {
