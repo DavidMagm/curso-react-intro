@@ -8,6 +8,7 @@ import { TodoLoading } from '../todoLoading';
 import { TodoError } from '../todoError';
 import { EmpyTodo } from '../empyTodo';
 import { TodoContext } from '../todoContext';
+import { Modal } from '../modal';
 import React from 'react';
 
 function AppUI() {
@@ -26,6 +27,8 @@ function AppUI() {
               error,
               searchTodo,
               completeTodo,
+              openModal,
+              setOpenModal,
               deleteTodo
             }
             ) => (
@@ -45,7 +48,15 @@ function AppUI() {
             )}
           
           </TodoContext.Consumer>
-          <TodoButtom/>
+          <TodoButtom
+            setOpenModal={setOpenModal}
+          />
+          {openModal && (
+            <Modal>
+              una function
+            </Modal>
+
+          )}
         </>
       );
 }
