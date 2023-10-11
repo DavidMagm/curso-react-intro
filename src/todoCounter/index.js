@@ -5,7 +5,7 @@ import './todoCounter.css';
 function TodoCounter () {
   const {completedTodo,totalTodo,titleChange} = React.useContext(TodoContext);
     return (
-      completed === total ?
+      completedTodo === totalTodo ?
       <h2 className="todoCounter">Has acabado</h2> 
       :
        <h2 className="todoCounter" onChange={titleChange}>

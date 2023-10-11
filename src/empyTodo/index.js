@@ -1,7 +1,8 @@
+import './empyTodo.css';
 function EmpyTodo (props) {
     return (
-       <p>
-        crea un nuevo Todo
+       <p className="empyTodo">
+      Crea un nuevo Todo
        </p>
     );
   }

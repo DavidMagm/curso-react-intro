@@ -9,29 +9,25 @@ import { TodoError } from '../todoError';
 import { EmpyTodo } from '../empyTodo';
 import { TodoContext } from '../todoContext';
 import { Modal } from '../modal';
+import {TodoForm} from '../todoForm';
 import React from 'react';
 
 function AppUI() {
+  const {
+    loading,
+    error,
+    searchTodo,
+    completeTodo,
+    openModal,
+    setOpenModal,
+    deleteTodo
+  } = React.useContext(TodoContext)
     return (
   
         <>
           <TodoTitle/>
-          <TodoCounter completed={completedTodo} total={totalTodo} />
-          <TodoSearch 
-          searchValue={searchValue}
-          setSearchValue={setSearchValue}
-          />
-          <TodoContext.Consumer>
-            {({
-              loading,
-              error,
-              searchTodo,
-              completeTodo,
-              openModal,
-              setOpenModal,
-              deleteTodo
-            }
-            ) => (
+          <TodoCounter/>
+          <TodoSearch/>
               <TodoList>
               {loading && <TodoLoading/>}
               {error && <TodoError/>}
@@ -45,15 +41,13 @@ function AppUI() {
                 onDelete={() => deleteTodo(todo.text)}/>
               ))}
             </TodoList>
-            )}
-          
-          </TodoContext.Consumer>
+  
           <TodoButtom
             setOpenModal={setOpenModal}
           />
           {openModal && (
             <Modal>
-              una function
+              <TodoForm/>
             </Modal>
 
           )}

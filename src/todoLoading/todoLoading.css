@@ -1,7 +1,9 @@
 .typing-indicator {
+    margin-top: 20px;
     width: 60px;
     height: 30px;
     position: relative;
+    left: 45%;
     z-index: 4;
     background-color: transparent;
   }
@@ -10,10 +12,10 @@
     width: 8px;
     height: 8px;
     position: absolute;
-    border-radius: 50%;
+    border-radius: 30%;
     background-color: #000;
     left: 15%;
-    transform-origin: 50%;
+    transform-origin: 30%;
     animation: typing-circle7124 0.5s alternate infinite ease;
   }
   

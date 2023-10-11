@@ -1,11 +1,12 @@
 .todoButton {
     display: block;
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 45px;
     position: absolute;
     top: 60%;
     right: 20%;
-    border-radius: 50%;
+    border-radius: 40%;
     font-size: 28px;
-    index-z: 1;
+    font-weight: bold;
+    z-index: 1;
 }
